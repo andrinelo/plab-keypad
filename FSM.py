@@ -3,8 +3,22 @@
 #An FSM object should house a pointer back to the agent, since it will make many requests to the agent (KPC) object.
 class FSM:
 
+    '''Valid states  = S-INIT, S-READ, S-VERIFY, S-ACTIVE
+    (S0, S1, S2, S3)
+    Kan evt endre disse til å ha en int-verdi? Se hva som er mest praktisk'''
+
+
     def __init__(self):
         self.state = "S-INIT"
+        self.CP = "" #Current password
+        self.CUMP = "" #Cumulative password
+
+    def set_password(self, password):
+        if self.state == "S-ACTIVE":
+            self.CP = password
+
+    def signal_is_digit(self, s):
+        return 48 <= ord(s) <= 57
 
     def add_rule():
         #add a new rule to the end of the FSMs rule list
