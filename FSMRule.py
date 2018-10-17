@@ -5,5 +5,3 @@ class FSMRule:
         self.s2 = s2
         self.trigger = trigger
         self.action = action
-
-    
