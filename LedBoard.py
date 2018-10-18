@@ -30,7 +30,7 @@ def twinkle_all_leds(k):
         sleep(1)                  # Sleep for 1 second
         GPIO.output(1, GPIO.LOW)  # Turn off
         sleep(1)                  # Sleep for 1 second
-    return 0
+    pass
 
 #in addition:
 # methods for the lighting patterns associated with powering up (and down) the system.
