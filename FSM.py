@@ -1,7 +1,7 @@
 #Finite State Machine
 
 #An FSM object should house a pointer back to the agent, since it will make many requests to the agent (KPC) object.
-from KPC import KPC
+#from KPC import KPC
 from FSMRule import FSMRule
 
 
@@ -13,21 +13,19 @@ class FSM:
 
 
     def __init__(self, kpc):
-        self.state = "S-INIT"
+        self.state = "S-INIT" #husk å bytte state manuelt under testing
         self.rules = []
         self.CP = "0000" # password
         self.CUMP = "" #Cumulative password
-        self.signal = None
+        self.signal = None #byttet her til triggersignal i rules du vil teste
         self.DP = ""
         self.kpc = kpc
+
 
     def set_password(self, password):
         if self.state == "S-ACTIVE":
             self.CP = password
 
-    @staticmethod
-    def signal_is_digit(sign):
-        return 48 <= ord(sign) <= 57
 
     def add_rule(self, s1, s2, trigger, action):
         self.rules.append(FSMRule(s1, s2, trigger, action))
@@ -36,24 +34,30 @@ class FSM:
     def run_rules(self):
         for rule in self.rules:
             if self.apply_rule(rule):
+                print("BREAK")
                 break
-        print("Ingen av reglene matchet") # skal man her sette self.state til state init?
+
+        print("Ingen av reglene matchet")
+         #skal man her sette self.state til state init?
         #go through the rule set, in order, applying each rule until one of the rules is fired.
 
 
     def apply_rule(self, rule):
+        #check whether the conditions of a rule are met
         if self.state == rule.s1 and  rule.trigger_is_true(self.signal):
             self.fire_rule(rule)
+            print("APPLY")
             return True
         return False
-        #check whether the conditions of a rule are met
+
 
 
     def fire_rule(self, rule):
-            self.state = rule.s2
-            rule.action()
-
         # use the consequent of a rule to a) set the next state of the FSM, and b) call the appropriate agent action method.
+        self.state = rule.s2
+        rule.action()
+        print("FIRE")
+
 
     def activate_is_true(self):
         if self.signal:
