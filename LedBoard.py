@@ -10,7 +10,8 @@ def setup():
     GPIO.setup(3, GPIO.OUT, initial=GPIO.LOW)
     GPIO.setup(4, GPIO.OUT, initial=GPIO.LOW)
     GPIO.setup(5, GPIO.OUT, initial=GPIO.LOW)
-    GPIO.setup(6, GPIO.OUT, initial=GPIO.LOW) # Set pin 1 - 6 to be an output pin and set initial value to low (off)
+    GPIO.setup(6, GPIO.OUT, initial=GPIO.LOW)
+    # Set pin 1 - 6 to be an output pin and set initial value to low (off)
     return 0
 
 def light_led():
