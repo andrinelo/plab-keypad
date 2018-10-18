@@ -7,9 +7,10 @@ class Keypad():
     #hvordan connecte R og C
     #hva skal vare i listen med rowpins og columnpins?
 
+
     def setup(self):
-        rowpins = [] #list of rowpins?
-        columnpins= [] #list of columnpins
+        rowpins = [0,1,2,3] #list of rowpins?
+        columnpins= [0,1,2] #list of columnpins
 
         #Set the proper mode via:
         GPIO.setmode(GPIO.BCM)
@@ -27,8 +28,7 @@ class Keypad():
     def do_polling(self):
         #Use nested loops (discussed above) to determine
         #the key currently being pressed on the keypad.
-
-        location = (0,0) #sets location being pushed to (0,0)
+        location = None
 
         for rp in range(0,4):
             #setting the RP to HIGH one at a time
@@ -41,7 +41,7 @@ class Keypad():
 
                 count = 0
                 for i in range(0,20):
-                    if(GPIO.input(cp) == GPIO.HIGH):
+                    if GPIO.input(cp) == GPIO.HIGH:
                         count += 1
                     time.sleep(20)
 
@@ -51,14 +51,25 @@ class Keypad():
 
             GPIO.output(rp, GPIO.low)
 
-
-
-
-
-        return 0
+        return location
 
     def get_next_signal(self):
+        while True:
+            pair = self.do_polling()
+            if pair:
+                sign = (pair[0]*3) + pair[1] + 1
+                if sign == 10:
+                    sign = "*"
+                elif sign == 11:
+                    sign = "0"
+                elif sign == 12:
+                    sign = "#"
+                else: sign = str(sign)
+                return sign
+
+
+            # skal gjøre polling
+            # self
         #This is the main interface between the agent and the keypad.
         #It should initiate repeated calls to do polling until a key press is detected.
-        return 0
 

@@ -14,5 +14,7 @@ class FSMRule:
             return self.trigger(sign)
         if FSM.signal_is_digit(self.trigger):
             return sign == self.trigger
+
+        # sjekke # og * --- sjekke det her? eller i FSM
         return False
 
