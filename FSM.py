@@ -64,41 +64,41 @@ class FSM:
             return True
         return False
 
-    def validate_cump(self, sign):
+    def validate_cump(self):
         index = len(self.CUMP)
-        if self.CP[index] == sign:
+        if self.CP[index] == self.signal:
             return True
         return False
 
-    def unvalidate_cump(self, sign):
+    def unvalidate_cump(self):
         index = len(self.CUMP)
-        if self.CP[index] == sign:
+        if self.CP[index] == self.signal:
             return False
         return True
 
-    def validate_entire(self, sign):
+    def validate_entire(self):
         if not len(self.CUMP) == len(self.CP):
             return False
-        return self.validate_cump(sign)
+        return self.validate_cump()
 
 
-    def validate_cump_pr(self, sign):
+    def validate_cump_pr(self):
         index = len(self.CUMP)
-        if self.DP[index] == sign:
+        if self.DP[index] == self.signal:
             return True
         return False
 
-    def unvalidate_cump_pr(self, sign):
+    def unvalidate_cump_pr(self):
         index = len(self.CUMP)
-        if self.CP[index] == sign:
+        if self.CP[index] == self.signal:
             return False
         return True
 
 
-    def validate_entire_pr(self, sign):
+    def validate_entire_pr(self):
         if not len(self.CUMP) == len(self.DP):
             return False
-        return self.validate_cump(sign)
+        return self.validate_cump()
 
 
     def main_loop(self):
