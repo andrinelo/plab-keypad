@@ -1,4 +1,4 @@
-#import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import time
 
 #Keypad - interface to the physical keypad
@@ -6,36 +6,38 @@ class Keypad():
 
     #hvordan connecte R og C
     #hva skal vare i listen med rowpins og columnpins?
+    def __init__(self):
+        self.setup()
+        self.rowpins = [18,23,24,25] #list of rowpins?
+        self.columnpins= [13,19,26] #list of columnpins
 
 
     def setup(self):
-        rowpins = [0,1,2,3] #list of rowpins?
-        columnpins= [0,1,2] #list of columnpins
 
         #Set the proper mode via:
         GPIO.setmode(GPIO.BCM)
-
+        rad = self.rowpins
+        cols = self.columnpins
         #sets the row pins as outputs
-        for rp in rowpins:
+        for rp in rad:
             GPIO.setup(rp,GPIO.OUT)
 
         #sets the column pins as inputs
-        for cp in columnpins:
+        for cp in cols:
             GPIO.setup(cp, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
-        return 0
 
     def do_polling(self):
         #Use nested loops (discussed above) to determine
         #the key currently being pressed on the keypad.
         location = None
 
-        for rp in range(0,4):
+        for rp in self.rowpins:
             #setting the RP to HIGH one at a time
             GPIO.output(rp,GPIO.HIGH)
 
             #looping through columns
-            for cp in range(0,3):
+            for cp in self.columnpins:
                 #check to see if column is HIGH
                 #20 times with delay to make sure its correct
 
