@@ -4,12 +4,12 @@ from Keypad import Keypad
 from FSMRule import FSMRule
 from LedBoard import LedBoard
 
-p1 = 1
-p2 = 2
-p3 = 3
-p4 = 4
-p5 = 5
-p6 = 6
+p1 = 2
+p2 = 4
+p3 = 7
+p4 = 8
+p5 = 10
+p6 = 12
 
 class KPC:
 
