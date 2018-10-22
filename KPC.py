@@ -167,6 +167,7 @@ class KPC:
 if __name__ == "__main__":
     KPC()
 
+
 #lager et objekt og kjorer main for å teste rules
 #kpcObject = KPC()
 #kpcObject.main()
