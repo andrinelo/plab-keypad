@@ -109,7 +109,8 @@ class FSM:
 
 
 
-    #begin in the FSMs default initial state and then repeatedly call get next signal and run rules until the FSM enters its default final state.
+    #begin in the FSMs default initial state and then repeatedly call get next signal
+    #  and run rules until the FSM enters its default final state.
 
 
 
