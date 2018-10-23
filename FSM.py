@@ -7,10 +7,6 @@ from FSMRule import FSMRule
 
 class FSM:
 
-    '''Valid states  = S-INIT, S-READ, S-VERIFY, S-ACTIVE
-    (S0, S1, S2, S3)
-    Kan evt endre disse til å ha en int-verdi? Se hva som er mest praktisk'''
-
 
     def __init__(self, kpc):
         self.state = "S-INIT" #husk å bytte state manuelt under testing
@@ -64,17 +60,20 @@ class FSM:
             return True
         return False
 
+
     def validate_cump(self):
         index = len(self.CUMP)
         if self.CP[index] == self.signal:
             return True
         return False
 
+
     def unvalidate_cump(self):
         index = len(self.CUMP)
         if self.CP[index] == self.signal:
             return False
         return True
+
 
     def validate_entire(self):
         if not len(self.CUMP) == len(self.CP):
@@ -110,46 +109,8 @@ class FSM:
 
 
     #begin in the FSMs default initial state and then repeatedly call get next signal
-    #  and run rules until the FSM enters its default final state.
+    #and run rules until the FSM enters its default final state.
 
 
 
 
-'''
-Regler vi må ha med i første del: 
-S-INIT, S-READ, activate_is_true, KPC.light_led_1
-
-S-READ, S-ACTIVE, validate_entire, read_to_active
-S-READ, S-READ, validate_cump, add_to_cump
-S-READ, S-READ, !validate_cump, read_wrong_nr
-S-READ, S-INIT, #, power_down
-
-S-ACTIVE, S-INIT, #, power_down
-
-Regler vi må ha med i sette passord og flashe lys: 
-
-S-ACTIVE, S-ACTIVE, 1, KPC.light_led_1
-S-ACTIVE, S-ACTIVE, 2, KPC.light_led_2
-S-ACTIVE, S-ACTIVE, 3, KPC.light_led_3
-S-ACTIVE, S-ACTIVE, 4, KPC.light_led_4
-S-ACTIVE, S-ACTIVE, 5, KPC.light_led_5
-S-ACTIVE, S-ACTIVE, 6, KPC.light_led_6
-
-
-
-S-ACTIVE, S-ACTIVE, 0 eller[7,9],  ingenting skjer
-
-S-ACTIVE, S-PR1, *, flash_change_state
-S-PR1, S-PR1, [0,9], add_to_dp
-S-PR1, S-ACTIVE, #, reset_dp
-S-PR1, S-PR2, *, flash_change_state
-S-PR2, S-ACTIVE, #, reset_dp_cump
-S-PR2, S-PRVERIFY, validate_entire_pr, flash_change_state
-S-PR2, S-PR2, validate_cump_PR, add_to_cump
-S-PR2, S-ACTIVE, !validate_cump_PR, pr2_to_active
-S-PRVERIFY, S-ACTIVE, *,  verify_to_active
-
-S-ACTIVE, S-INIT, #, power_down()
-
-
-'''

@@ -21,7 +21,6 @@ class KPC:
         self.override_signal = None
         self.bulbNumber = "" #which bulb to be lit, LID
         self.ledTime = "" #duration of lit LED, Ldur
-        self.init_passcode_entry() #runs main loop in FSM, listening for signals
 
     def init_rules(self):
         self.fsm.add_rule("S-INIT", "S-READ", self.fsm.activate_is_true, self.ledboard.power_up)
@@ -162,10 +161,11 @@ class KPC:
     #kjorer kode for å teste
     def main(self):
         self.init_rules()
-        self.fsm.run_rules()
+        self.fsm.main_loop()
 
 if __name__ == "__main__":
-    KPC()
+    kpc = KPC()
+    kpc.init_passcode_entry()
 
 
 #lager et objekt og kjorer main for å teste rules
