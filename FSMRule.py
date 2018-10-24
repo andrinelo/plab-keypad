@@ -10,8 +10,6 @@ class FSMRule:
         self.action = action
 
 
-
-
         # sjekke # og * --- sjekke det her? eller i FSM
 
     def __str__(self):
