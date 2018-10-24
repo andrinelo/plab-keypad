@@ -41,7 +41,7 @@ class KPC:
         self.fsm.add_rule("S-ACTIVE", "S-LED", "6", self.bulb2beLIT)
         self.fsm.add_rule("S-ACTIVE", "S-PR1", "*", self.flash_change_state)
 
-        self.fsm.add_rule("S-LED", "S-TIME", "*", self.light_duration_kpc) #ingenting skjer?
+        self.fsm.add_rule("S-LED", "S-TIME", "*", self.ingenting) #ingenting skjer?
         self.fsm.add_rule("S-LED", "S-INIT", "#", self.ledboard.power_down)
 
         self.fsm.add_rule("S-TIME", "S-TIME", self.fsm.signal_is_digit, self.add_to_LEDtime)
@@ -79,6 +79,9 @@ class KPC:
         self.ledboard.light_duration(int(self.bulbNumber), int(self.ledTime))
         self.bulbNumber = ""
         self.ledTime = ""
+
+    def ingenting(self):
+        pass
 
 
     def light_duration_kpc(self):
