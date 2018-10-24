@@ -3,6 +3,7 @@
 #An FSM object should house a pointer back to the agent, since it will make many requests to the agent (KPC) object.
 #from KPC import KPC
 from FSMRule import FSMRule
+from inspect import isfunction
 
 
 class FSM:

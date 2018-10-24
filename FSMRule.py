@@ -1,5 +1,5 @@
 #from FSM import finiteSM
-from inspect import isfunction
+
 
 class FSMRule:
 
