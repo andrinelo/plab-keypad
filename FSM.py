@@ -98,7 +98,7 @@ class FSM:
 
 
     def validate_entire(self):
-        if not len(self.CUMP) == len(self.CP):
+        if not len(self.CUMP) == len(self.CP)-1:
             return False
         return self.validate_cump()
 
@@ -117,7 +117,7 @@ class FSM:
 
 
     def validate_entire_pr(self):
-        if not len(self.CUMP) == len(self.DP):
+        if not len(self.CUMP) == len(self.DP)-1:
             return False
         return self.validate_cump()
 
