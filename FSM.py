@@ -17,6 +17,15 @@ class FSM:
         self.DP = ""
         self.kpc = kpc
 
+    def signal_is_digit(self):
+        return 48 <= ord(self.signal) <= 57
+
+
+    def trigger_is_true(self, rule):
+        if isfunction(rule.trigger):
+            return rule.trigger()
+        else: #self.signal_is_digit(self.trigger):
+            return self.signal == rule.trigger
 
     def set_password(self, password):
         if self.state == "S-ACTIVE":
@@ -48,8 +57,8 @@ class FSM:
         print("My state : ", self.state)
         print("Rulestate = ", rule.s1)
         print("Er min stat lik rulestate? ", self.state == rule.s1)
-        print("Is trigger true? ", rule.trigger_is_true(self.signal))
-        if self.state == rule.s1 and  rule.trigger_is_true(self.signal):
+        print("Is trigger true? ", self.trigger_is_true(rule))
+        if self.state == rule.s1 and  self.trigger_is_true(rule):
             self.fire_rule(rule)
             print("APPLY")
             return True

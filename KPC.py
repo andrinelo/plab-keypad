@@ -42,11 +42,11 @@ class KPC:
         self.fsm.add_rule("S-LED", "S-TIME", "*", None) #ingenting skjer?
         self.fsm.add_rule("S-LED", "S-INIT", "#", self.ledboard.power_down)
 
-        self.fsm.add_rule("S-TIME", "S-TIME", FSMRule.signal_is_digit, self.add_to_LEDtime)
+        self.fsm.add_rule("S-TIME", "S-TIME", self.fsm.signal_is_digit, self.add_to_LEDtime)
         self.fsm.add_rule("S-TIME", "S-ACTIVE", "*", self.activate_bulb)
         self.fsm.add_rule("S-TIME", "S-INIT", "#", self.ledboard.power_down)
 
-        self.fsm.add_rule("S-PR1", "S-PR1", FSMRule.signal_is_digit, self.add_to_dp)
+        self.fsm.add_rule("S-PR1", "S-PR1", self.fsm.signal_is_digit, self.add_to_dp)
         #kommentar under gjelder linje 41
         # noe feil med signal_is_digit, bare prøv å kjøre den som signal og riktig state, og se på feilmeldingen om
         #at: expected string but function found
