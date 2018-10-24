@@ -25,6 +25,7 @@ class FSM:
 
 
     def trigger_is_true(self, rule):
+        print("Inne i trigger is true, her er trigger: ", rule.trigger)
         if isinstance(rule.trigger, types.FunctionType):
             print("Trigger function = ", rule.trigger)
             return rule.trigger()
