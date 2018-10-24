@@ -1,5 +1,5 @@
 #from FSM import finiteSM
-from inspect import isfunction
+
 
 class FSMRule:
 
@@ -10,15 +10,7 @@ class FSMRule:
         self.action = action
 
 
-    #flytta signal_is_digit hit fra FSM
-    @staticmethod
-    def signal_is_digit(sign):
-        return 48 <= ord(sign) <= 57
-
-    def trigger_is_true(self, sign):
-        if isfunction(self.trigger):
-            return self.trigger(sign)
-        else: #self.signal_is_digit(self.trigger):
-            return sign == self.trigger
-
         # sjekke # og * --- sjekke det her? eller i FSM
+
+    def __str__(self):
+        return "State = "+ self.s1+ ". NextState = "+ self.s2
