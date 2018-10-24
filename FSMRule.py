@@ -17,7 +17,7 @@ class FSMRule:
 
     def trigger_is_true(self, sign):
         if isfunction(self.trigger):
-            return self.trigger(sign)
+            return self.trigger()
         else: #self.signal_is_digit(self.trigger):
             return sign == self.trigger
 

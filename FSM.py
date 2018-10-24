@@ -27,6 +27,7 @@ class FSM:
         self.rules.append(FSMRule(s1, s2, trigger, action))
 
 
+
     def run_rules(self):
         print("Signal when in run_rules = ", self.signal)
         for r in self.rules:
@@ -48,6 +49,8 @@ class FSM:
             print("APPLY")
             return True
         return False
+
+
 
 
 
