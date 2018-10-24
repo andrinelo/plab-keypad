@@ -70,7 +70,7 @@ class KPC:
     def init_passcode_entry(self):
         #Clear the passcode-buffer and initiate a power up lighting sequence on the LED Board.
         # This should be done when the user first presses the keypad.
-        self.fsm.main_loop()
+        self.main()
 
 
     def activate_bulb(self):
@@ -116,7 +116,6 @@ class KPC:
         self.fsm.CUMP = ""
 
     def add_to_cump(self):
-
         self.fsm.CUMP += self.fsm.signal
         print("adds to cump - test 3")
 

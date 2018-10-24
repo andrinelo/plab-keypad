@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c90a9db-e2f4-4a17-9f90-f84b03c1fb91" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KPC.py" afterPath="$PROJECT_DIR$/KPC.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LedBoard.py" afterPath="$PROJECT_DIR$/LedBoard.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,13 +35,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KPC.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="KPC.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/KPC.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+            <state relative-caret-position="173">
+              <caret line="77" column="28" lean-forward="true" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
               <folding>
-                <marker date="1540364496000" expanded="true" signature="0:68" ph="..." />
+                <marker date="1540365479000" expanded="true" signature="0:68" ph="..." />
               </folding>
             </state>
           </provider>
@@ -59,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LedBoard.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LedBoard.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LedBoard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="574">
-              <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+            <state relative-caret-position="619">
+              <caret line="94" column="28" lean-forward="true" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
               <folding>
                 <element signature="e#65#126#0" expanded="true" />
               </folding>
@@ -100,9 +100,9 @@
         <option value="$PROJECT_DIR$/RBS.py" />
         <option value="$PROJECT_DIR$/FSMRule.py" />
         <option value="$PROJECT_DIR$/Keypad.py" />
-        <option value="$PROJECT_DIR$/KPC.py" />
         <option value="$PROJECT_DIR$/FSM.py" />
         <option value="$PROJECT_DIR$/LedBoard.py" />
+        <option value="$PROJECT_DIR$/KPC.py" />
       </list>
     </option>
   </component>
@@ -500,7 +500,7 @@
         <state relative-caret-position="544">
           <caret line="164" column="20" lean-forward="false" selection-start-line="164" selection-start-column="20" selection-end-line="164" selection-end-column="20" />
           <folding>
-            <marker date="1540364496000" expanded="true" signature="0:68" ph="..." />
+            <marker date="1540365479000" expanded="true" signature="0:68" ph="..." />
           </folding>
         </state>
       </provider>
@@ -526,7 +526,7 @@
         <state relative-caret-position="1275">
           <caret line="54" column="60" lean-forward="false" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
           <folding>
-            <marker date="1540364496000" expanded="true" signature="0:68" ph="..." />
+            <marker date="1540365479000" expanded="true" signature="0:68" ph="..." />
           </folding>
         </state>
       </provider>
@@ -572,7 +572,7 @@
         <state relative-caret-position="4100">
           <caret line="167" column="4" lean-forward="false" selection-start-line="167" selection-start-column="4" selection-end-line="167" selection-end-column="4" />
           <folding>
-            <marker date="1540364496000" expanded="true" signature="0:68" ph="..." />
+            <marker date="1540365479000" expanded="true" signature="0:68" ph="..." />
           </folding>
         </state>
       </provider>
@@ -638,7 +638,7 @@
         <state relative-caret-position="1000">
           <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
-            <marker date="1540364496000" expanded="true" signature="0:68" ph="..." />
+            <marker date="1540365479000" expanded="true" signature="0:68" ph="..." />
           </folding>
         </state>
       </provider>
@@ -715,16 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/KPC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-          <folding>
-            <marker date="1540364496000" expanded="true" signature="0:68" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FSM.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -735,10 +725,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LedBoard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+        <state relative-caret-position="619">
+          <caret line="94" column="28" lean-forward="true" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
           <folding>
             <element signature="e#65#126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KPC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="77" column="28" lean-forward="true" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+          <folding>
+            <marker date="1540365479000" expanded="true" signature="0:68" ph="..." />
           </folding>
         </state>
       </provider>

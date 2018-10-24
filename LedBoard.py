@@ -87,11 +87,11 @@ class LedBoard:
 
 
     def power_up(self):
-        print("powering up")
+        print("powering up in led board")
         self.light_led(1, 3)
 
     def power_down(self):
-        print ("powering down")
+        print ("powering down in ledboard")
         self.light_led(2, 1)
         self.light_led(4, 1)
         self.light_led(6, 1)
