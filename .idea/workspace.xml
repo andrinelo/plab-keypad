@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c90a9db-e2f4-4a17-9f90-f84b03c1fb91" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KPC.py" afterPath="$PROJECT_DIR$/KPC.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FSM.py" afterPath="$PROJECT_DIR$/FSM.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LedBoard.py" afterPath="$PROJECT_DIR$/LedBoard.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +18,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FSM.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FSM.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FSM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="317">
+              <caret line="61" column="38" lean-forward="false" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
               <folding>
                 <element signature="e#141#168#0" expanded="true" />
               </folding>
@@ -40,10 +40,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KPC.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="KPC.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/KPC.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
+            <state relative-caret-position="999">
               <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
               <folding>
                 <element signature="e#134#145#0" expanded="true" />
@@ -68,8 +68,8 @@
       <file leaf-file-name="LedBoard.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LedBoard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="72" column="23" lean-forward="true" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
+            <state relative-caret-position="182">
+              <caret line="50" column="25" lean-forward="true" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
               <folding>
                 <element signature="e#65#126#0" expanded="true" />
               </folding>
@@ -106,9 +106,9 @@
         <option value="$PROJECT_DIR$/RBS.py" />
         <option value="$PROJECT_DIR$/Keypad.py" />
         <option value="$PROJECT_DIR$/FSMRule.py" />
-        <option value="$PROJECT_DIR$/FSM.py" />
-        <option value="$PROJECT_DIR$/LedBoard.py" />
         <option value="$PROJECT_DIR$/KPC.py" />
+        <option value="$PROJECT_DIR$/LedBoard.py" />
+        <option value="$PROJECT_DIR$/FSM.py" />
       </list>
     </option>
   </component>
@@ -744,24 +744,6 @@
     <entry file="file://$PROJECT_DIR$/heihei.py" />
     <entry file="file://$PROJECT_DIR$/../prosjekt1.py" />
     <entry file="file://$PROJECT_DIR$/.gitignore" />
-    <entry file="file://$PROJECT_DIR$/FSM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="e#141#168#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FSMRule.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Keypad.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -774,8 +756,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LedBoard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="72" column="23" lean-forward="true" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
+        <state relative-caret-position="182">
+          <caret line="50" column="25" lean-forward="true" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
           <folding>
             <element signature="e#65#126#0" expanded="true" />
           </folding>
@@ -784,11 +766,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/KPC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
+        <state relative-caret-position="999">
           <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
           <folding>
             <element signature="e#134#145#0" expanded="true" />
             <marker date="1540373709000" expanded="true" signature="0:68" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FSMRule.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FSM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="61" column="38" lean-forward="false" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+          <folding>
+            <element signature="e#141#168#0" expanded="true" />
           </folding>
         </state>
       </provider>

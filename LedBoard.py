@@ -42,7 +42,7 @@ class LedBoard:
         for x in range (0,6):
             self.light_led(x)
 
-        sleep(3)  # Light for 3 seconds
+        time.sleep(3)  # Light for 3 seconds
 
         self.turnoff_leds()
 

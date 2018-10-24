@@ -26,7 +26,6 @@ class FSM:
 
 
     def trigger_is_true(self, rule):
-        print("Inne i trigger is true, her er trigger: ", rule.trigger)
         if isinstance(rule.trigger, types.MethodType):
             print("Trigger function = ", rule.trigger)
             return rule.trigger()
@@ -45,8 +44,6 @@ class FSM:
 
     def run_rules(self):
         print("Signal when in run_rules = ", self.signal)
-        for r in self.rules:
-            print(r)
         for rule in self.rules:
             if self.apply_rule(rule):
                 print("BREAK")
@@ -62,6 +59,7 @@ class FSM:
         print("inne i apply rule")
         print("My state : ", self.state)
         print("Rulestate = ", rule.s1)
+        print("next state = ", rule.s2)
         print("Er min stat lik rulestate? ", self.state == rule.s1)
         print("Is trigger true? ", self.trigger_is_true(rule))
         if self.state == rule.s1 and  self.trigger_is_true(rule):
