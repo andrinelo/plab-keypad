@@ -26,6 +26,7 @@ class LedBoard:
 
 
     def light_led(self, lid, ldur):
+        print("Ledboard lighhling light {} for {} seconds", lid, ldur)
         GPIO.output(lid, GPIO.HIGH)
         sleep(ldur)
         GPIO.output(lid, GPIO.LOW)
@@ -33,6 +34,7 @@ class LedBoard:
         #declarations, and then making the appropriate HIGH /LOW settings on the output pins.
 
     def flash_all_leds(self):
+        print("Flashing all leds")
         #Flash all 6 LEDs on and off for k seconds, where k is an argument of the method.
         GPIO.output(1, GPIO.HIGH)  # Turn on led 1
         GPIO.output(2, GPIO.HIGH)  # Turn on led 2
@@ -53,6 +55,7 @@ class LedBoard:
         print("flash all leds for k seconds complete")
 
     def twinkle_all_leds(self):
+        print("twinkling all leds")
         #Turn all LEDs on and off in sequence for k seconds, where k is an argument of the method.
 
         time = (0.5)
@@ -84,9 +87,11 @@ class LedBoard:
 
 
     def power_up(self):
+        print("powering up")
         self.light_led(1, 3)
 
     def power_down(self):
+        print ("powering down")
         self.light_led(2, 1)
         self.light_led(4, 1)
         self.light_led(6, 1)
