@@ -27,7 +27,7 @@ class FSM:
 
     def trigger_is_true(self, rule):
         if isinstance(rule.trigger, types.MethodType):
-            print("Trigger function = ", rule.trigger)
+            #print("Trigger function = ", rule.trigger)
             return rule.trigger()
         else: #self.signal_is_digit(self.trigger):
             return self.signal == rule.trigger
@@ -46,25 +46,26 @@ class FSM:
         print("Signal when in run_rules = ", self.signal)
         for rule in self.rules:
             if self.apply_rule(rule):
-                print("BREAK")
+                print("My state : ", self.state)
+                print("Rulestate = ", rule.s1)
+                print("next state = ", rule.s2)
+                print("BREAK. FINISHED WITH ACTION")
+
                 break
 
         print("Ingen av reglene matchet")
-         #skal man her sette self.state til state init?
         #go through the rule set, in order, applying each rule until one of the rules is fired.
 
 
     def apply_rule(self, rule):
         #check whether the conditions of a rule are met
-        print("inne i apply rule")
-        print("My state : ", self.state)
-        print("Rulestate = ", rule.s1)
-        print("next state = ", rule.s2)
-        print("Er min stat lik rulestate? ", self.state == rule.s1)
-        print("Is trigger true? ", self.trigger_is_true(rule))
+        #print("inne i apply rule")
+
+        #print("Er min stat lik rulestate? ", self.state == rule.s1)
+        #print("Is trigger true? ", self.trigger_is_true(rule))
         if self.state == rule.s1 and  self.trigger_is_true(rule):
             self.fire_rule(rule)
-            print("APPLY")
+            print("APPLY RULE")
             return True
         return False
 
@@ -74,7 +75,7 @@ class FSM:
         # use the consequent of a rule to a) set the next state of the FSM, and b) call the appropriate agent action method.
         self.state = rule.s2
         rule.action()
-        print("FIRE")
+        print("FIRE RULE")
 
 
     def activate_is_true(self):

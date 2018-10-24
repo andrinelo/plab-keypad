@@ -17,11 +17,11 @@ class Keypad:
     def setup(self):
 
         #Set the proper mode via:
-        print("Setting mode anf rows and cols")
+        #print("Setting mode anf rows and cols")
         GPIO.setmode(GPIO.BCM)
         rad = self.rowpins
         cols = self.columnpins
-        print("Have set mode anf rows and cols")
+        #print("Have set mode anf rows and cols")
 
         #sets the row pins as outputs
         for rp in rad:
