@@ -28,8 +28,8 @@ class FSM:
 
 
     def run_rules(self):
-        for rule in rules:
-            print(rule)
+        for r in self.rules:
+            print(r)
         for rule in self.rules:
             if self.apply_rule(rule):
                 print("BREAK")
