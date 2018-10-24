@@ -65,6 +65,7 @@ class LedBoard:
 
 
     def light_duration(self, ind, duration):
+        print("lighing: ", ind, ". duration: ", duration)
         self.light_led(ind)
         time.sleep(duration)
         self.turnoff_leds()
