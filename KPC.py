@@ -67,10 +67,10 @@ class KPC:
 
         self.fsm.add_rule("S-ACTIVE", "S-INIT", "#", self.ledboard.power_down)
 
-    def init_passcode_entry(self):
+    #def init_passcode_entry(self):
         #Clear the passcode-buffer and initiate a power up lighting sequence on the LED Board.
         # This should be done when the user first presses the keypad.
-        self.main()
+        #self.main()
 
 
     def activate_bulb(self):
@@ -87,8 +87,10 @@ class KPC:
 
     def get_next_signal(self):
         if self.override_signal:
+            print("Finner bare overrideSignal")
             return self.override_signal
         else:
+            print("Signal hentet til KPC")
             return self.keypad.get_next_signal()
 
         #Return the override-signal, if it is non-blank; otherwise query the keypad for the next pressed key.
@@ -164,7 +166,7 @@ class KPC:
 
 if __name__ == "__main__":
     kpc = KPC()
-    kpc.init_passcode_entry()
+    kpc.main()
 
 
 #lager et objekt og kjorer main for å teste rules

@@ -22,3 +22,6 @@ class FSMRule:
             return sign == self.trigger
 
         # sjekke # og * --- sjekke det her? eller i FSM
+
+    def __str__(self):
+        return "State = "+ self.s1+ ". NextState = "+ self.s2
