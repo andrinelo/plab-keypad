@@ -28,6 +28,7 @@ class FSM:
 
 
     def run_rules(self):
+        print("Signal when in run_rules = ", self.signal)
         for r in self.rules:
             print(r)
         for rule in self.rules:
