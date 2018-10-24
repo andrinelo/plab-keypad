@@ -24,9 +24,11 @@ class FSM:
 
     def trigger_is_true(self, rule):
         if isfunction(rule.trigger):
-            return rule.trigger()
+            return True
+           # return rule.trigger()
         else: #self.signal_is_digit(self.trigger):
-            return self.signal == rule.trigger
+            return True
+            #return self.signal == rule.trigger
 
     def set_password(self, password):
         if self.state == "S-ACTIVE":
