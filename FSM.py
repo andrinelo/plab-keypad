@@ -12,7 +12,7 @@ class FSM:
     def __init__(self, kpc):
         self.state = "S-INIT" #husk å bytte state manuelt under testing
         self.rules = []
-        self.CP = "0000" # password
+        self.CP = "4567" # password
         self.CUMP = "" #Cumulative password
         self.signal = None #byttet her til triggersignal i rules du vil teste
         self.DP = ""
