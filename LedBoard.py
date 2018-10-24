@@ -1,6 +1,6 @@
 #Led Board - interface to the physical, Charlieplexed LED board.
 import RPi.GPIO as GPIO    # Import Raspberry Pi GPIO library
-from time import sleep     # Import the sleep function from the time module
+import time  # Import the sleep function from the time module
 
 
 
@@ -13,7 +13,8 @@ class LedBoard:
         [-1, 1, 0],
         [-1, 0, 1],
         [1, -1, 0],
-        [0, -1, 1]
+        [0, -1, 1],
+        [-1,-1,-1]
     ]
 
 
@@ -43,49 +44,46 @@ class LedBoard:
 
         sleep(3)  # Light for 3 seconds
 
-        for y in LedBoard.pins:
-            GPIO.output(y, GPIO.LOW) # turn off led
+        self.turnoff_leds()
 
 
+    def turnoff_leds(self):
+        self.light_led(6)
 
     def twinkle_all_leds(self):
         print("twinkling all leds")
         #Turn all LEDs on and off in sequence for k seconds, where k is an argument of the method.
 
-        time = (0.5)
+        timeend = time.time() + 5 #current time + 5 sec
 
-        self.light_led(0)
-        sleep(time)  # light for k/6 seconds
+        while time.time() < timeend:
+            for i in range (0,6):
+                self.light_led(i)
+                time.sleep(0.1)
+                self.turnoff_leds()
 
-        self.light_led(1)
-        sleep(time)  # light for k/6 seconds
 
-        self.light_led(2)
-        sleep(time)  # light for k/6 seconds
 
-        self.light_led(3)
-        sleep(time)  # light for k/6 seconds
-
-        self.light_led(4)
-        sleep(time)  # light for k/6 seconds
-
-        self.light_led(5)
-        sleep(time)  # light for k/6 seconds
-
-        for y in LedBoard.pins:
-            GPIO.output(y, GPIO.LOW) # turn off led
-
+    def light_duration(self, ind, duration):
+        self.light_led(ind)
+        time.sleep(duration)
+        self.turnoff_leds()
 
 
     def power_up(self):
         print("powering up in led board")
         self.light_led(0)
+        time.sleep(2)
+        self.turnoff_leds()
 
     def power_down(self):
         print ("powering down in ledboard")
         self.light_led(1)
         self.light_led(3)
         self.light_led(5)
+        time.sleep(2)
+        self.turnoff_leds()
+
 
     #in addition:
 # methods for the lighting patterns associated with powering up (and down) the system.

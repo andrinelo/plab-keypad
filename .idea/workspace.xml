@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c90a9db-e2f4-4a17-9f90-f84b03c1fb91" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KPC.py" afterPath="$PROJECT_DIR$/KPC.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LedBoard.py" afterPath="$PROJECT_DIR$/LedBoard.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,13 +40,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KPC.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="KPC.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/KPC.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="25" column="61" lean-forward="false" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
+            <state relative-caret-position="185">
+              <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
               <folding>
-                <marker date="1540368038000" expanded="true" signature="0:68" ph="..." />
+                <element signature="e#134#145#0" expanded="true" />
+                <marker date="1540373709000" expanded="true" signature="0:68" ph="..." />
               </folding>
             </state>
           </provider>
@@ -54,8 +56,8 @@
       <file leaf-file-name="Keypad.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Keypad.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="692">
-              <caret line="71" column="52" lean-forward="false" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
+            <state relative-caret-position="420">
+              <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -63,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LedBoard.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LedBoard.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LedBoard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+            <state relative-caret-position="253">
+              <caret line="72" column="23" lean-forward="true" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
               <folding>
                 <element signature="e#65#126#0" expanded="true" />
               </folding>
@@ -103,10 +105,10 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/RBS.py" />
         <option value="$PROJECT_DIR$/Keypad.py" />
-        <option value="$PROJECT_DIR$/KPC.py" />
         <option value="$PROJECT_DIR$/FSMRule.py" />
         <option value="$PROJECT_DIR$/FSM.py" />
         <option value="$PROJECT_DIR$/LedBoard.py" />
+        <option value="$PROJECT_DIR$/KPC.py" />
       </list>
     </option>
   </component>
@@ -531,7 +533,8 @@
         <state relative-caret-position="544">
           <caret line="164" column="20" lean-forward="false" selection-start-line="164" selection-start-column="20" selection-end-line="164" selection-end-column="20" />
           <folding>
-            <marker date="1540368038000" expanded="true" signature="0:68" ph="..." />
+            <element signature="e#134#145#0" expanded="true" />
+            <marker date="1540373709000" expanded="true" signature="0:68" ph="..." />
           </folding>
         </state>
       </provider>
@@ -559,7 +562,8 @@
         <state relative-caret-position="1275">
           <caret line="54" column="60" lean-forward="false" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
           <folding>
-            <marker date="1540368038000" expanded="true" signature="0:68" ph="..." />
+            <element signature="e#134#145#0" expanded="true" />
+            <marker date="1540373709000" expanded="true" signature="0:68" ph="..." />
           </folding>
         </state>
       </provider>
@@ -607,7 +611,8 @@
         <state relative-caret-position="4100">
           <caret line="167" column="4" lean-forward="false" selection-start-line="167" selection-start-column="4" selection-end-line="167" selection-end-column="4" />
           <folding>
-            <marker date="1540368038000" expanded="true" signature="0:68" ph="..." />
+            <element signature="e#134#145#0" expanded="true" />
+            <marker date="1540373709000" expanded="true" signature="0:68" ph="..." />
           </folding>
         </state>
       </provider>
@@ -675,7 +680,8 @@
         <state relative-caret-position="1000">
           <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
-            <marker date="1540368038000" expanded="true" signature="0:68" ph="..." />
+            <element signature="e#134#145#0" expanded="true" />
+            <marker date="1540373709000" expanded="true" signature="0:68" ph="..." />
           </folding>
         </state>
       </provider>
@@ -738,22 +744,12 @@
     <entry file="file://$PROJECT_DIR$/heihei.py" />
     <entry file="file://$PROJECT_DIR$/../prosjekt1.py" />
     <entry file="file://$PROJECT_DIR$/.gitignore" />
-    <entry file="file://$PROJECT_DIR$/Keypad.py">
+    <entry file="file://$PROJECT_DIR$/FSM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="692">
-          <caret line="71" column="52" lean-forward="false" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
+        <state relative-caret-position="336">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/KPC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="25" column="61" lean-forward="false" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
-          <folding>
-            <marker date="1540368038000" expanded="true" signature="0:68" ph="..." />
+            <element signature="e#141#168#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -766,22 +762,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FSM.py">
+    <entry file="file://$PROJECT_DIR$/Keypad.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="420">
+          <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
           <folding>
-            <element signature="e#141#168#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LedBoard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+        <state relative-caret-position="253">
+          <caret line="72" column="23" lean-forward="true" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
           <folding>
             <element signature="e#65#126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KPC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+          <folding>
+            <element signature="e#134#145#0" expanded="true" />
+            <marker date="1540373709000" expanded="true" signature="0:68" ph="..." />
           </folding>
         </state>
       </provider>

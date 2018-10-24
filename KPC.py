@@ -1,15 +1,17 @@
 #KPC - the keypad controller agent that coordinates activity between the other 3 classes along with veryifying and changing passwords
+import time
+
 from FSM import FSM
 from Keypad import Keypad
 from FSMRule import FSMRule
 from LedBoard import LedBoard
 
-p1 = 2
-p2 = 4
-p3 = 7
-p4 = 8
-p5 = 10
-p6 = 12
+p1 = 0
+p2 = 1
+p3 = 2
+p4 = 3
+p5 = 4
+p6 = 5
 
 class KPC:
 
@@ -74,7 +76,7 @@ class KPC:
 
 
     def activate_bulb(self):
-        self.ledboard.light_led(int(self.bulbNumber), int(self.ledTime))
+        self.ledboard.light_duration(int(self.bulbNumber), int(self.ledTime))
         self.bulbNumber = ""
         self.ledTime = ""
 
@@ -83,7 +85,7 @@ class KPC:
         self.ledTime += self.fsm.signal
 
     def bulb2beLIT(self):
-        self.bulbNumber = self.fsm.signal
+        self.bulbNumber = str(int(self.fsm.signal)-1)
 
     def get_next_signal(self):
         if self.override_signal:
@@ -128,8 +130,10 @@ class KPC:
 
     def flash_change_state(self):
         print("Change of state flash")
-        self.ledboard.light_led(3, 1)
-        self.ledboard.light_led(4, 1)
+        self.ledboard.light_led(2)
+        self.ledboard.light_led(3)
+        time.sleep(2)
+        self.ledboard.turnoff_leds()
 
     def add_to_dp(self):
         print("add to DP")
