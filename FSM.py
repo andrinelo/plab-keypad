@@ -1,9 +1,10 @@
 #Finite State Machine
 
 #An FSM object should house a pointer back to the agent, since it will make many requests to the agent (KPC) object.
-#from KPC import KPC
+
 from FSMRule import FSMRule
 from inspect import isfunction
+
 
 import types
 
@@ -26,7 +27,7 @@ class FSM:
 
     def trigger_is_true(self, rule):
         print("Inne i trigger is true, her er trigger: ", rule.trigger)
-        if isinstance(rule.trigger, types.FunctionType):
+        if isinstance(rule.trigger, types.MethodType):
             print("Trigger function = ", rule.trigger)
             return rule.trigger()
         else: #self.signal_is_digit(self.trigger):
@@ -129,7 +130,13 @@ class FSM:
             self.run_rules()
 
 
-
+'''
+if __name__ == '__main__':
+    fsm = FSM("")
+    print(type(fsm.activate_is_true))
+    if isinstance(fsm.activate_is_true, types.MethodType):
+        print("yey its a method")
+'''
 
     #begin in the FSMs default initial state and then repeatedly call get next signal
     #and run rules until the FSM enters its default final state.
