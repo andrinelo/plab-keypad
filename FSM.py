@@ -5,6 +5,8 @@
 from FSMRule import FSMRule
 from inspect import isfunction
 
+import types
+
 
 class FSM:
 
@@ -23,7 +25,7 @@ class FSM:
 
 
     def trigger_is_true(self, rule):
-        if isfunction(rule.trigger):
+        if isinstance(rule.trigger, types.FunctionType):
             print("Trigger function = ", rule.trigger)
             return rule.trigger()
         else: #self.signal_is_digit(self.trigger):
