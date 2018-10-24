@@ -1,26 +1,36 @@
 #Finite State Machine
 
 #An FSM object should house a pointer back to the agent, since it will make many requests to the agent (KPC) object.
-#from KPC import KPC
+
 from FSMRule import FSMRule
+from inspect import isfunction
+
+
+import types
 
 
 class FSM:
-
-    '''Valid states  = S-INIT, S-READ, S-VERIFY, S-ACTIVE
-    (S0, S1, S2, S3)
-    Kan evt endre disse til å ha en int-verdi? Se hva som er mest praktisk'''
 
 
     def __init__(self, kpc):
         self.state = "S-INIT" #husk å bytte state manuelt under testing
         self.rules = []
-        self.CP = "0000" # password
+        self.CP = "4567" # password
         self.CUMP = "" #Cumulative password
         self.signal = None #byttet her til triggersignal i rules du vil teste
         self.DP = ""
         self.kpc = kpc
 
+    def signal_is_digit(self):
+        return 48 <= ord(self.signal) <= 57
+
+
+    def trigger_is_true(self, rule):
+        if isinstance(rule.trigger, types.MethodType):
+            print("Trigger function = ", rule.trigger)
+            return rule.trigger()
+        else: #self.signal_is_digit(self.trigger):
+            return self.signal == rule.trigger
 
     def set_password(self, password):
         if self.state == "S-ACTIVE":
@@ -31,7 +41,9 @@ class FSM:
         self.rules.append(FSMRule(s1, s2, trigger, action))
 
 
+
     def run_rules(self):
+        print("Signal when in run_rules = ", self.signal)
         for rule in self.rules:
             if self.apply_rule(rule):
                 print("BREAK")
@@ -44,7 +56,13 @@ class FSM:
 
     def apply_rule(self, rule):
         #check whether the conditions of a rule are met
-        if self.state == rule.s1 and  rule.trigger_is_true(self.signal):
+        print("inne i apply rule")
+        print("My state : ", self.state)
+        print("Rulestate = ", rule.s1)
+        print("next state = ", rule.s2)
+        print("Er min stat lik rulestate? ", self.state == rule.s1)
+        print("Is trigger true? ", self.trigger_is_true(rule))
+        if self.state == rule.s1 and  self.trigger_is_true(rule):
             self.fire_rule(rule)
             print("APPLY")
             return True
@@ -60,9 +78,10 @@ class FSM:
 
 
     def activate_is_true(self):
-        if self.signal:
+        if self.signal is not None:
             return True
         return False
+
 
     def validate_cump(self):
         index = len(self.CUMP)
@@ -70,21 +89,23 @@ class FSM:
             return True
         return False
 
+
     def unvalidate_cump(self):
         index = len(self.CUMP)
         if self.CP[index] == self.signal:
             return False
         return True
 
+
     def validate_entire(self):
-        if not len(self.CUMP) == len(self.CP):
+        if not len(self.CUMP) == len(self.CP)-1:
             return False
         return self.validate_cump()
 
 
     def validate_cump_pr(self):
         index = len(self.CUMP)
-        if self.DP[index] == self.signal:
+        if self.DP != "" and self.DP[index] == self.signal:
             return True
         return False
 
@@ -96,9 +117,9 @@ class FSM:
 
 
     def validate_entire_pr(self):
-        if not len(self.CUMP) == len(self.DP):
+        if not len(self.CUMP) == len(self.DP)-1:
             return False
-        return self.validate_cump()
+        return self.validate_cump_pr()
 
 
     def main_loop(self):
@@ -107,49 +128,17 @@ class FSM:
             self.run_rules()
 
 
-
+'''
+if __name__ == '__main__':
+    fsm = FSM("")
+    print(type(fsm.activate_is_true))
+    if isinstance(fsm.activate_is_true, types.MethodType):
+        print("yey its a method")
+'''
 
     #begin in the FSMs default initial state and then repeatedly call get next signal
-    #  and run rules until the FSM enters its default final state.
+    #and run rules until the FSM enters its default final state.
 
 
 
 
-'''
-Regler vi må ha med i første del: 
-S-INIT, S-READ, activate_is_true, KPC.light_led_1
-
-S-READ, S-ACTIVE, validate_entire, read_to_active
-S-READ, S-READ, validate_cump, add_to_cump
-S-READ, S-READ, !validate_cump, read_wrong_nr
-S-READ, S-INIT, #, power_down
-
-S-ACTIVE, S-INIT, #, power_down
-
-Regler vi må ha med i sette passord og flashe lys: 
-
-S-ACTIVE, S-ACTIVE, 1, KPC.light_led_1
-S-ACTIVE, S-ACTIVE, 2, KPC.light_led_2
-S-ACTIVE, S-ACTIVE, 3, KPC.light_led_3
-S-ACTIVE, S-ACTIVE, 4, KPC.light_led_4
-S-ACTIVE, S-ACTIVE, 5, KPC.light_led_5
-S-ACTIVE, S-ACTIVE, 6, KPC.light_led_6
-
-
-
-S-ACTIVE, S-ACTIVE, 0 eller[7,9],  ingenting skjer
-
-S-ACTIVE, S-PR1, *, flash_change_state
-S-PR1, S-PR1, [0,9], add_to_dp
-S-PR1, S-ACTIVE, #, reset_dp
-S-PR1, S-PR2, *, flash_change_state
-S-PR2, S-ACTIVE, #, reset_dp_cump
-S-PR2, S-PRVERIFY, validate_entire_pr, flash_change_state
-S-PR2, S-PR2, validate_cump_PR, add_to_cump
-S-PR2, S-ACTIVE, !validate_cump_PR, pr2_to_active
-S-PRVERIFY, S-ACTIVE, *,  verify_to_active
-
-S-ACTIVE, S-INIT, #, power_down()
-
-
-'''

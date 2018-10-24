@@ -1,15 +1,17 @@
 #KPC - the keypad controller agent that coordinates activity between the other 3 classes along with veryifying and changing passwords
+import time
+
 from FSM import FSM
 from Keypad import Keypad
 from FSMRule import FSMRule
 from LedBoard import LedBoard
 
-p1 = 2
-p2 = 4
-p3 = 7
-p4 = 8
-p5 = 10
-p6 = 12
+p1 = 0
+p2 = 1
+p3 = 2
+p4 = 3
+p5 = 4
+p6 = 5
 
 class KPC:
 
@@ -21,7 +23,6 @@ class KPC:
         self.override_signal = None
         self.bulbNumber = "" #which bulb to be lit, LID
         self.ledTime = "" #duration of lit LED, Ldur
-        self.init_passcode_entry() #runs main loop in FSM, listening for signals
 
     def init_rules(self):
         self.fsm.add_rule("S-INIT", "S-READ", self.fsm.activate_is_true, self.ledboard.power_up)
@@ -40,14 +41,14 @@ class KPC:
         self.fsm.add_rule("S-ACTIVE", "S-LED", "6", self.bulb2beLIT)
         self.fsm.add_rule("S-ACTIVE", "S-PR1", "*", self.flash_change_state)
 
-        self.fsm.add_rule("S-LED", "S-TIME", "*", None) #ingenting skjer?
+        self.fsm.add_rule("S-LED", "S-TIME", "*", self.ingenting) #ingenting skjer?
         self.fsm.add_rule("S-LED", "S-INIT", "#", self.ledboard.power_down)
 
-        self.fsm.add_rule("S-TIME", "S-TIME", FSMRule.signal_is_digit, self.add_to_LEDtime)
+        self.fsm.add_rule("S-TIME", "S-TIME", self.fsm.signal_is_digit, self.add_to_LEDtime)
         self.fsm.add_rule("S-TIME", "S-ACTIVE", "*", self.activate_bulb)
         self.fsm.add_rule("S-TIME", "S-INIT", "#", self.ledboard.power_down)
 
-        self.fsm.add_rule("S-PR1", "S-PR1", FSMRule.signal_is_digit, self.add_to_dp)
+        self.fsm.add_rule("S-PR1", "S-PR1", self.fsm.signal_is_digit, self.add_to_dp)
         #kommentar under gjelder linje 41
         # noe feil med signal_is_digit, bare prøv å kjøre den som signal og riktig state, og se på feilmeldingen om
         #at: expected string but function found
@@ -68,28 +69,36 @@ class KPC:
 
         self.fsm.add_rule("S-ACTIVE", "S-INIT", "#", self.ledboard.power_down)
 
-    def init_passcode_entry(self):
+    #def init_passcode_entry(self):
         #Clear the passcode-buffer and initiate a power up lighting sequence on the LED Board.
         # This should be done when the user first presses the keypad.
-        self.fsm.main_loop()
+        #self.main()
 
 
     def activate_bulb(self):
-        self.ledboard.light_led(int(self.bulbNumber), int(self.ledTime))
+        self.ledboard.light_duration(int(self.bulbNumber), int(self.ledTime))
         self.bulbNumber = ""
         self.ledTime = ""
 
+    def ingenting(self):
+        pass
+
+
+    def light_duration_kpc(self):
+        self.ledboard.light_duration(self.bulbNumber, self.ledTime)
 
     def add_to_LEDtime(self):
         self.ledTime += self.fsm.signal
 
     def bulb2beLIT(self):
-        self.bulbNumber = self.fsm.signal
+        self.bulbNumber = str(int(self.fsm.signal)-1)
 
     def get_next_signal(self):
         if self.override_signal:
+            print("Finner bare overrideSignal")
             return self.override_signal
         else:
+            print("Signal hentet til KPC")
             return self.keypad.get_next_signal()
 
         #Return the override-signal, if it is non-blank; otherwise query the keypad for the next pressed key.
@@ -117,7 +126,6 @@ class KPC:
         self.fsm.CUMP = ""
 
     def add_to_cump(self):
-
         self.fsm.CUMP += self.fsm.signal
         print("adds to cump - test 3")
 
@@ -128,8 +136,10 @@ class KPC:
 
     def flash_change_state(self):
         print("Change of state flash")
-        self.ledboard.light_led(3, 1)
-        self.ledboard.light_led(4, 1)
+        self.ledboard.light_led(2)
+        self.ledboard.light_led(3)
+        time.sleep(2)
+        self.ledboard.turnoff_leds()
 
     def add_to_dp(self):
         print("add to DP")
@@ -162,10 +172,12 @@ class KPC:
     #kjorer kode for å teste
     def main(self):
         self.init_rules()
-        self.fsm.run_rules()
+        self.ledboard.setup()
+        self.fsm.main_loop()
 
 if __name__ == "__main__":
-    KPC()
+    kpc = KPC()
+    kpc.main()
 
 
 #lager et objekt og kjorer main for å teste rules
