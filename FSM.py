@@ -68,8 +68,6 @@ class FSM:
 
 
 
-
-
     def fire_rule(self, rule):
         # use the consequent of a rule to a) set the next state of the FSM, and b) call the appropriate agent action method.
         self.state = rule.s2
@@ -78,7 +76,7 @@ class FSM:
 
 
     def activate_is_true(self):
-        if self.signal:
+        if self.signal is not None:
             return True
         return False
 
