@@ -44,6 +44,7 @@ class FSM:
 
     def apply_rule(self, rule):
         #check whether the conditions of a rule are met
+        print("inne i apply rule")
         if self.state == rule.s1 and  rule.trigger_is_true(self.signal):
             self.fire_rule(rule)
             print("APPLY")
