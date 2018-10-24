@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c90a9db-e2f4-4a17-9f90-f84b03c1fb91" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LedBoard.py" afterPath="$PROJECT_DIR$/LedBoard.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FSM.py" afterPath="$PROJECT_DIR$/FSM.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,11 +17,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FSM.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FSM.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FSM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="113" column="10" lean-forward="false" selection-start-line="113" selection-start-column="10" selection-end-line="113" selection-end-column="10" />
+            <state relative-caret-position="316">
+              <caret line="116" column="0" lean-forward="true" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
               <folding>
                 <element signature="e#141#168#0" expanded="true" />
               </folding>
@@ -42,7 +42,7 @@
       <file leaf-file-name="KPC.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/KPC.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
+            <state relative-caret-position="-868">
               <caret line="80" column="25" lean-forward="true" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="25" />
               <folding>
                 <element signature="e#134#145#0" expanded="true" />
@@ -64,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LedBoard.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LedBoard.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LedBoard.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="415">
@@ -105,9 +105,9 @@
         <option value="$PROJECT_DIR$/RBS.py" />
         <option value="$PROJECT_DIR$/Keypad.py" />
         <option value="$PROJECT_DIR$/FSMRule.py" />
-        <option value="$PROJECT_DIR$/FSM.py" />
         <option value="$PROJECT_DIR$/KPC.py" />
         <option value="$PROJECT_DIR$/LedBoard.py" />
+        <option value="$PROJECT_DIR$/FSM.py" />
       </list>
     </option>
   </component>
@@ -751,16 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FSM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="113" column="10" lean-forward="false" selection-start-line="113" selection-start-column="10" selection-end-line="113" selection-end-column="10" />
-          <folding>
-            <element signature="e#141#168#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Keypad.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -771,9 +761,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/LedBoard.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="67" column="56" lean-forward="false" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="56" />
+          <folding>
+            <element signature="e#65#126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/KPC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
+        <state relative-caret-position="-868">
           <caret line="80" column="25" lean-forward="true" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="25" />
           <folding>
             <element signature="e#134#145#0" expanded="true" />
@@ -782,12 +782,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LedBoard.py">
+    <entry file="file://$PROJECT_DIR$/FSM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="67" column="56" lean-forward="false" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="56" />
+        <state relative-caret-position="316">
+          <caret line="116" column="0" lean-forward="true" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
           <folding>
-            <element signature="e#65#126#0" expanded="true" />
+            <element signature="e#141#168#0" expanded="true" />
           </folding>
         </state>
       </provider>

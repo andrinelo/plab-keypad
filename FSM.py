@@ -119,7 +119,7 @@ class FSM:
     def validate_entire_pr(self):
         if not len(self.CUMP) == len(self.DP)-1:
             return False
-        return self.validate_cump()
+        return self.validate_cump_pr()
 
 
     def main_loop(self):
