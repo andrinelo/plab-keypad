@@ -105,7 +105,7 @@ class FSM:
 
     def validate_cump_pr(self):
         index = len(self.CUMP)
-        if self.DP[index] == self.signal:
+        if self.DP != "" and self.DP[index] == self.signal:
             return True
         return False
 
