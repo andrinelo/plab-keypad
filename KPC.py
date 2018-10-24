@@ -162,6 +162,7 @@ class KPC:
     #kjorer kode for å teste
     def main(self):
         self.init_rules()
+        self.ledboard.setup()
         self.fsm.main_loop()
 
 if __name__ == "__main__":
